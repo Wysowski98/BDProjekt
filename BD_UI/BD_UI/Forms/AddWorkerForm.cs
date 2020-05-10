@@ -42,7 +42,7 @@ namespace BD_UI
             var showRoom = showRooms.Where(sr => sr.Address == comboBoxShowroom.Text).FirstOrDefault<CarShowrooms>();
             var jobs = db.Set<Jobs>();
             var job = jobs.Where(j => j.Name == comboBoxWorkerPosition.Text).FirstOrDefault<Jobs>();
-            emp.Add(new Employees { FirstName = textBoxName.Text, LastName = textBoxLastName.Text, PhoneNumber = textBoxPhoneNumber.Text, CarShowroom = showRoom, Job = job });
+            emp.Add(new Employees { FirstName = textBoxName.Text, LastName = textBoxLastName.Text, PhoneNumber = textBoxPhoneNumber.Text, CarShowroom = showRoom, Job = job, DoucmentNumber = Int32.Parse(textBoxID.Text) });
 
             db.SaveChanges();
 

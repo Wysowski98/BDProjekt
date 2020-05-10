@@ -7,14 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BD_UI.Database;
+using BD_UI.Database.Domain;
 
 namespace BD_UI
 {
     public partial class AddCustomerForm : Form
     {
+        private DatabaseContext db;
+
         public AddCustomerForm()
         {
             InitializeComponent();
+            DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
+            db = fac.CreateDbContext();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -24,6 +30,7 @@ namespace BD_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            var client = db.Set<Clients>();
             this.Close();
         }
     }

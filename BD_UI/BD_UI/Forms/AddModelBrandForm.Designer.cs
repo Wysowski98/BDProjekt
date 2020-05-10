@@ -42,12 +42,12 @@
             this.buttonAdd = new System.Windows.Forms.Button();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxModel = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBoxBrand.SuspendLayout();
             this.groupBoxWorker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
@@ -209,7 +209,7 @@
             this.groupBox1.Controls.Add(this.textBox3);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.textBoxModel);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -219,6 +219,27 @@
             this.groupBox1.TabIndex = 20;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Model pojazdu";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(81, 144);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(55, 17);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "ID marki";
+            // 
+            // textBox3
+            // 
+            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Location = new System.Drawing.Point(64, 164);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(85, 21);
+            this.textBox3.TabIndex = 6;
             // 
             // label5
             // 
@@ -241,15 +262,15 @@
             this.textBox1.Size = new System.Drawing.Size(85, 21);
             this.textBox1.TabIndex = 1;
             // 
-            // textBox2
+            // textBoxModel
             // 
-            this.textBox2.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Location = new System.Drawing.Point(15, 68);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 21);
-            this.textBox2.TabIndex = 4;
+            this.textBoxModel.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxModel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxModel.Location = new System.Drawing.Point(15, 68);
+            this.textBoxModel.Multiline = true;
+            this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.Size = new System.Drawing.Size(186, 21);
+            this.textBoxModel.TabIndex = 4;
             // 
             // label6
             // 
@@ -261,27 +282,6 @@
             this.label6.Size = new System.Drawing.Size(83, 17);
             this.label6.TabIndex = 5;
             this.label6.Text = "Nazwa marki";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(81, 144);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(55, 17);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "ID marki";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Location = new System.Drawing.Point(64, 164);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(85, 21);
-            this.textBox3.TabIndex = 6;
             // 
             // AddModelBrandForm
             // 
@@ -327,7 +327,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxModel;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBox3;

@@ -60,7 +60,9 @@ namespace BD_UI
                 .Where(showroom => showroom.Address == comboBoxShowroomAdress.Text)
                 .FirstOrDefault<CarShowrooms>()
             });
-        this.Close();
+            databaseContext.SaveChanges();
+
+            this.Close();
         }
 
         // Set models of selected brand

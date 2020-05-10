@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BD_UI.Database;
+using BD_UI.Database.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,6 +26,17 @@ namespace BD_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
+            using (var db = fac.CreateDbContext())
+            {
+                var client = db.Set<Clients>();
+                client.Add(new Clients
+                {
+                    FirstName = textBoxName.Text,
+                    LastName = textBoxLastName.Text,
+                    PhoneNumber = textBoxPhoneNumber.Text
+                });
+            }
             this.Close();
         }
     }

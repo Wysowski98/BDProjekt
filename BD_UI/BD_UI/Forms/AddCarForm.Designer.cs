@@ -84,6 +84,7 @@
             this.comboBoxBrand.Name = "comboBoxBrand";
             this.comboBoxBrand.Size = new System.Drawing.Size(186, 29);
             this.comboBoxBrand.TabIndex = 3;
+            this.comboBoxBrand.SelectedIndexChanged += new System.EventHandler(this.comboBoxBrand_SelectedIndexChanged);
             // 
             // textBoxYear
             // 

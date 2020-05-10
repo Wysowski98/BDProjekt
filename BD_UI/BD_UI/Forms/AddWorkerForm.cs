@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BD_UI.Database;
+using BD_UI.Database.Domain;
 
 namespace BD_UI
 {
@@ -19,6 +21,15 @@ namespace BD_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
+            DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
+            using (var db = fac.CreateDbContext())
+            {
+                var emp = db.Set<Employees>();              
+                emp.Add(new Employees { FirstName = textBoxName.Text, LastName = textBoxLastName.Text });
+
+                db.SaveChanges();
+            }
+            
             this.Close();
         }
 

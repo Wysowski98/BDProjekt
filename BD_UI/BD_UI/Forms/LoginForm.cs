@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BD_UI.Database;
+using BD_UI.Database.Domain;
+using System;
 using System.Windows.Forms;
 
 namespace BD_UI
@@ -11,7 +13,7 @@ namespace BD_UI
         }
    
         private void buttonLogin_Click(object sender, EventArgs e)
-        {
+        {        
             if (textBoxUsername.Text == "pracownik" && textBoxPassword.Text == "pracownik")
             {
                 this.Hide();
@@ -50,6 +52,6 @@ namespace BD_UI
                 buttonLogin_Click(this, new EventArgs());
             }
 
-        }
+        }      
     }
 }

@@ -274,6 +274,10 @@
     <Compile Include="Migrations\20200507195913_init.designer.cs">
       <DependentUpon>20200507195913_init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200510132618_Employees.cs" />
+    <Compile Include="Migrations\20200510132618_Employees.designer.cs">
+      <DependentUpon>20200510132618_Employees.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

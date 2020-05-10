@@ -21,6 +21,16 @@ namespace BD_UI
             DesignTimeDbContextFactory factory = new DesignTimeDbContextFactory();
             databaseContext = factory.CreateDbContext();
             InitializeComponent();
+            fillComboBox();
+        }
+
+        private void fillComboBox()
+        {
+            var brands = databaseContext.Set<CarBrands>();
+            foreach (CarBrands carBrand in brands)
+            {
+                comboBoxBrand.Items.Add(carBrand.Name);
+            }
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -44,6 +54,17 @@ namespace BD_UI
                 job.Add(new Jobs
                 {
                     Name = textBoxWorkerName.Text
+                });
+            }
+            if (!String.IsNullOrWhiteSpace(textBoxModel.Text))
+            {
+                var model = databaseContext.Set<Models>();
+                model.Add(new Models
+                {
+                    Name = textBoxModel.Text,
+                    Brand = databaseContext.Set<CarBrands>()
+                    .Where(brand => brand.Name == comboBoxBrand.Text)
+                    .FirstOrDefault<CarBrands>()
                 });
             }
 

@@ -63,5 +63,16 @@ namespace BD_UI.Database
             builder.UseSqlServer(connectionString);
             return new DatabaseContext(builder.Options);
         }
+
+        public DatabaseContext CreateDbContext()
+        {
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .Build();
+            var builder = new DbContextOptionsBuilder<DatabaseContext>();
+            var connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=BDProject;Trusted_Connection=True;MultipleActiveResultSets=true";
+            builder.UseSqlServer(connectionString);
+            return new DatabaseContext(builder.Options);
+        }
     }
 }

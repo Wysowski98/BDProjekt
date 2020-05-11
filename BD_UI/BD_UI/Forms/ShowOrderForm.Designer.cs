@@ -36,28 +36,28 @@
             this.label12 = new System.Windows.Forms.Label();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBoxIDorder = new System.Windows.Forms.TextBox();
+            this.textBoxOrderID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxShowroom = new System.Windows.Forms.TextBox();
+            this.textBoxCar = new System.Windows.Forms.TextBox();
             this.listBoxServices = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBoxIDcustomer = new System.Windows.Forms.TextBox();
+            this.textBoxCustomerID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxOrders = new System.Windows.Forms.ListBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.buttonDone = new System.Windows.Forms.Button();
-            this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
-            this.textBoxCar = new System.Windows.Forms.TextBox();
-            this.textBoxShowroom = new System.Windows.Forms.TextBox();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -73,7 +73,7 @@
             this.groupBox3.Controls.Add(this.label12);
             this.groupBox3.Controls.Add(this.textBoxPrice);
             this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.textBoxIDorder);
+            this.groupBox3.Controls.Add(this.textBoxOrderID);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox3.Location = new System.Drawing.Point(388, 153);
             this.groupBox3.Name = "groupBox3";
@@ -156,16 +156,16 @@
             this.label13.TabIndex = 40;
             this.label13.Text = "Numer zamówienia";
             // 
-            // textBoxIDorder
+            // textBoxOrderID
             // 
-            this.textBoxIDorder.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxIDorder.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIDorder.Location = new System.Drawing.Point(8, 58);
-            this.textBoxIDorder.Multiline = true;
-            this.textBoxIDorder.Name = "textBoxIDorder";
-            this.textBoxIDorder.ReadOnly = true;
-            this.textBoxIDorder.Size = new System.Drawing.Size(186, 21);
-            this.textBoxIDorder.TabIndex = 40;
+            this.textBoxOrderID.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxOrderID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxOrderID.Location = new System.Drawing.Point(8, 58);
+            this.textBoxOrderID.Multiline = true;
+            this.textBoxOrderID.Name = "textBoxOrderID";
+            this.textBoxOrderID.ReadOnly = true;
+            this.textBoxOrderID.Size = new System.Drawing.Size(186, 21);
+            this.textBoxOrderID.TabIndex = 40;
             // 
             // groupBox2
             // 
@@ -182,6 +182,28 @@
             this.groupBox2.TabIndex = 60;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Dane pojazdu";
+            // 
+            // textBoxShowroom
+            // 
+            this.textBoxShowroom.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxShowroom.Location = new System.Drawing.Point(129, 74);
+            this.textBoxShowroom.Multiline = true;
+            this.textBoxShowroom.Name = "textBoxShowroom";
+            this.textBoxShowroom.ReadOnly = true;
+            this.textBoxShowroom.Size = new System.Drawing.Size(186, 21);
+            this.textBoxShowroom.TabIndex = 45;
+            // 
+            // textBoxCar
+            // 
+            this.textBoxCar.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxCar.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCar.Location = new System.Drawing.Point(129, 34);
+            this.textBoxCar.Multiline = true;
+            this.textBoxCar.Name = "textBoxCar";
+            this.textBoxCar.ReadOnly = true;
+            this.textBoxCar.Size = new System.Drawing.Size(186, 21);
+            this.textBoxCar.TabIndex = 44;
             // 
             // listBoxServices
             // 
@@ -236,9 +258,9 @@
             // 
             this.groupBox1.Controls.Add(this.textBoxPhoneNumber);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.textBoxIDcustomer);
+            this.groupBox1.Controls.Add(this.textBoxCustomerID);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBoxName);
+            this.groupBox1.Controls.Add(this.textBoxFirstName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxLastName);
             this.groupBox1.Controls.Add(this.label2);
@@ -249,6 +271,17 @@
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane klienta";
+            // 
+            // textBoxPhoneNumber
+            // 
+            this.textBoxPhoneNumber.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPhoneNumber.Location = new System.Drawing.Point(129, 142);
+            this.textBoxPhoneNumber.Multiline = true;
+            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
+            this.textBoxPhoneNumber.ReadOnly = true;
+            this.textBoxPhoneNumber.Size = new System.Drawing.Size(186, 21);
+            this.textBoxPhoneNumber.TabIndex = 39;
             // 
             // label4
             // 
@@ -261,16 +294,16 @@
             this.label4.TabIndex = 38;
             this.label4.Text = "Numer telefonu";
             // 
-            // textBoxIDcustomer
+            // textBoxCustomerID
             // 
-            this.textBoxIDcustomer.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxIDcustomer.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxIDcustomer.Location = new System.Drawing.Point(129, 108);
-            this.textBoxIDcustomer.Multiline = true;
-            this.textBoxIDcustomer.Name = "textBoxIDcustomer";
-            this.textBoxIDcustomer.ReadOnly = true;
-            this.textBoxIDcustomer.Size = new System.Drawing.Size(186, 21);
-            this.textBoxIDcustomer.TabIndex = 37;
+            this.textBoxCustomerID.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxCustomerID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCustomerID.Location = new System.Drawing.Point(129, 108);
+            this.textBoxCustomerID.Multiline = true;
+            this.textBoxCustomerID.Name = "textBoxCustomerID";
+            this.textBoxCustomerID.ReadOnly = true;
+            this.textBoxCustomerID.Size = new System.Drawing.Size(186, 21);
+            this.textBoxCustomerID.TabIndex = 37;
             // 
             // label3
             // 
@@ -283,16 +316,16 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Numer dowodu";
             // 
-            // textBoxName
+            // textBoxFirstName
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxName.Location = new System.Drawing.Point(129, 38);
-            this.textBoxName.Multiline = true;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(186, 21);
-            this.textBoxName.TabIndex = 32;
+            this.textBoxFirstName.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFirstName.Location = new System.Drawing.Point(129, 38);
+            this.textBoxFirstName.Multiline = true;
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.ReadOnly = true;
+            this.textBoxFirstName.Size = new System.Drawing.Size(186, 21);
+            this.textBoxFirstName.TabIndex = 32;
             // 
             // label1
             // 
@@ -327,20 +360,21 @@
             this.label2.TabIndex = 35;
             this.label2.Text = "Nazwisko";
             // 
-            // listBox1
+            // listBoxOrders
             // 
-            this.listBox1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 17;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listBoxOrders.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxOrders.FormattingEnabled = true;
+            this.listBoxOrders.ItemHeight = 17;
+            this.listBoxOrders.Items.AddRange(new object[] {
             "zamowienie1",
             "zamowienie2",
             "zamowienie3"});
-            this.listBox1.Location = new System.Drawing.Point(291, 42);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.ScrollAlwaysVisible = true;
-            this.listBox1.Size = new System.Drawing.Size(227, 89);
-            this.listBox1.TabIndex = 58;
+            this.listBoxOrders.Location = new System.Drawing.Point(291, 42);
+            this.listBoxOrders.Name = "listBoxOrders";
+            this.listBoxOrders.ScrollAlwaysVisible = true;
+            this.listBoxOrders.Size = new System.Drawing.Size(227, 89);
+            this.listBoxOrders.TabIndex = 58;
+            this.listBoxOrders.SelectedIndexChanged += new System.EventHandler(this.listBoxOrders_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -388,39 +422,6 @@
             this.buttonDone.UseVisualStyleBackColor = false;
             this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
-            // textBoxPhoneNumber
-            // 
-            this.textBoxPhoneNumber.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxPhoneNumber.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPhoneNumber.Location = new System.Drawing.Point(129, 142);
-            this.textBoxPhoneNumber.Multiline = true;
-            this.textBoxPhoneNumber.Name = "textBoxPhoneNumber";
-            this.textBoxPhoneNumber.ReadOnly = true;
-            this.textBoxPhoneNumber.Size = new System.Drawing.Size(186, 21);
-            this.textBoxPhoneNumber.TabIndex = 39;
-            // 
-            // textBoxCar
-            // 
-            this.textBoxCar.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxCar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxCar.Location = new System.Drawing.Point(129, 34);
-            this.textBoxCar.Multiline = true;
-            this.textBoxCar.Name = "textBoxCar";
-            this.textBoxCar.ReadOnly = true;
-            this.textBoxCar.Size = new System.Drawing.Size(186, 21);
-            this.textBoxCar.TabIndex = 44;
-            // 
-            // textBoxShowroom
-            // 
-            this.textBoxShowroom.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxShowroom.Location = new System.Drawing.Point(129, 74);
-            this.textBoxShowroom.Multiline = true;
-            this.textBoxShowroom.Name = "textBoxShowroom";
-            this.textBoxShowroom.ReadOnly = true;
-            this.textBoxShowroom.Size = new System.Drawing.Size(186, 21);
-            this.textBoxShowroom.TabIndex = 45;
-            // 
             // ShowOrderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,7 +431,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.listBox1);
+            this.Controls.Add(this.listBoxOrders);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pictureBoxClose);
@@ -458,7 +459,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxPrice;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBoxIDorder;
+        private System.Windows.Forms.TextBox textBoxOrderID;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.ListBox listBoxServices;
         private System.Windows.Forms.Label label6;
@@ -466,13 +467,13 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBoxIDcustomer;
+        private System.Windows.Forms.TextBox textBoxCustomerID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxOrders;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBoxClose;

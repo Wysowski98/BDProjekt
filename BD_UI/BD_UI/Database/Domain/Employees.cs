@@ -16,7 +16,7 @@ namespace BD_UI.Database.Domain
 
         public string PhoneNumber { get; set; }
 
-        public int DoucmentNumber { get; set; }
+        public string DoucmentNumber { get; set; }
 
         public CarShowrooms CarShowroom { get; set; }
 

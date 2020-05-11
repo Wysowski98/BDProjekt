@@ -287,6 +287,14 @@
     <Compile Include="Migrations\20200511190610_Accounts.designer.cs">
       <DependentUpon>20200511190610_Accounts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200511201140_DocumentNumberChange.cs" />
+    <Compile Include="Migrations\20200511201140_DocumentNumberChange.designer.cs">
+      <DependentUpon>20200511201140_DocumentNumberChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200511201414_DocumentNumberClients.cs" />
+    <Compile Include="Migrations\20200511201414_DocumentNumberClients.designer.cs">
+      <DependentUpon>20200511201414_DocumentNumberClients.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

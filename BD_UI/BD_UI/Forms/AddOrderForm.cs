@@ -71,7 +71,7 @@ namespace BD_UI
                     FirstName = textBoxName.Text,
                     LastName = textBoxLastName.Text,
                     PhoneNumber = textBoxPhoneNumber.Text,
-                    DocumentNumber = int.Parse(textBoxIDcustomer.Text)
+                    DocumentNumber = textBoxIDcustomer.Text
                 };
             }
             var car = databaseContext.Cars.FirstOrDefault(c => comboBoxCar.SelectedItem.ToString().Contains(c.Model.Name));

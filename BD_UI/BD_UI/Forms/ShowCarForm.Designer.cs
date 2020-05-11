@@ -32,6 +32,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.listBoxCars = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxShowroom = new System.Windows.Forms.TextBox();
+            this.textBoxBrand = new System.Windows.Forms.TextBox();
+            this.textBoxModel = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxIDcar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,9 +50,6 @@
             this.textBoxEngine = new System.Windows.Forms.TextBox();
             this.buttonDone = new System.Windows.Forms.Button();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.textBoxModel = new System.Windows.Forms.TextBox();
-            this.textBoxBrand = new System.Windows.Forms.TextBox();
-            this.textBoxShowroom = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
@@ -90,6 +90,7 @@
             this.listBoxCars.ScrollAlwaysVisible = true;
             this.listBoxCars.Size = new System.Drawing.Size(237, 310);
             this.listBoxCars.TabIndex = 29;
+            this.listBoxCars.SelectedIndexChanged += new System.EventHandler(this.listBoxCars_SelectedIndexChanged);
             // 
             // groupBox1
             // 
@@ -116,6 +117,39 @@
             this.groupBox1.TabIndex = 49;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane pojazdu";
+            // 
+            // textBoxShowroom
+            // 
+            this.textBoxShowroom.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxShowroom.Location = new System.Drawing.Point(22, 434);
+            this.textBoxShowroom.Multiline = true;
+            this.textBoxShowroom.Name = "textBoxShowroom";
+            this.textBoxShowroom.ReadOnly = true;
+            this.textBoxShowroom.Size = new System.Drawing.Size(186, 21);
+            this.textBoxShowroom.TabIndex = 24;
+            // 
+            // textBoxBrand
+            // 
+            this.textBoxBrand.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxBrand.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxBrand.Location = new System.Drawing.Point(22, 381);
+            this.textBoxBrand.Multiline = true;
+            this.textBoxBrand.Name = "textBoxBrand";
+            this.textBoxBrand.ReadOnly = true;
+            this.textBoxBrand.Size = new System.Drawing.Size(186, 21);
+            this.textBoxBrand.TabIndex = 23;
+            // 
+            // textBoxModel
+            // 
+            this.textBoxModel.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxModel.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxModel.Location = new System.Drawing.Point(22, 333);
+            this.textBoxModel.Multiline = true;
+            this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.ReadOnly = true;
+            this.textBoxModel.Size = new System.Drawing.Size(186, 21);
+            this.textBoxModel.TabIndex = 22;
             // 
             // label1
             // 
@@ -283,39 +317,6 @@
             this.pictureBoxClose.TabIndex = 28;
             this.pictureBoxClose.TabStop = false;
             this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            // 
-            // textBoxModel
-            // 
-            this.textBoxModel.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxModel.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxModel.Location = new System.Drawing.Point(22, 333);
-            this.textBoxModel.Multiline = true;
-            this.textBoxModel.Name = "textBoxModel";
-            this.textBoxModel.ReadOnly = true;
-            this.textBoxModel.Size = new System.Drawing.Size(186, 21);
-            this.textBoxModel.TabIndex = 22;
-            // 
-            // textBoxBrand
-            // 
-            this.textBoxBrand.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxBrand.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxBrand.Location = new System.Drawing.Point(22, 381);
-            this.textBoxBrand.Multiline = true;
-            this.textBoxBrand.Name = "textBoxBrand";
-            this.textBoxBrand.ReadOnly = true;
-            this.textBoxBrand.Size = new System.Drawing.Size(186, 21);
-            this.textBoxBrand.TabIndex = 23;
-            // 
-            // textBoxShowroom
-            // 
-            this.textBoxShowroom.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxShowroom.Location = new System.Drawing.Point(22, 434);
-            this.textBoxShowroom.Multiline = true;
-            this.textBoxShowroom.Name = "textBoxShowroom";
-            this.textBoxShowroom.ReadOnly = true;
-            this.textBoxShowroom.Size = new System.Drawing.Size(186, 21);
-            this.textBoxShowroom.TabIndex = 24;
             // 
             // ShowCarForm
             // 

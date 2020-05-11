@@ -25,6 +25,8 @@ namespace BD_UI.Database
 
         public DbSet<Orders> Orders { get; set; }
 
+        public DbSet<Accounts> Accounts { get; set; }
+
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options) { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -48,6 +50,7 @@ namespace BD_UI.Database
             modelBuilder.Entity<Orders>().HasOne(x => x.Employee);
             modelBuilder.Entity<Orders>().HasOne(x => x.Client);
             modelBuilder.Entity<Orders>().HasOne(x => x.Car);
+            modelBuilder.Entity<Accounts>().HasOne(x => x.Employee);
         }
     }
 

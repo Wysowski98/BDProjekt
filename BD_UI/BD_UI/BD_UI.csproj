@@ -166,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Database\DatabaseContext.cs" />
+    <Compile Include="Database\Domain\Accounts.cs" />
     <Compile Include="Database\Domain\CarBrands.cs" />
     <Compile Include="Database\Domain\Cars.cs" />
     <Compile Include="Database\Domain\CarShowrooms.cs" />
@@ -281,6 +282,10 @@
     <Compile Include="Migrations\20200510163828_Employees.cs" />
     <Compile Include="Migrations\20200510163828_Employees.designer.cs">
       <DependentUpon>20200510163828_Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200511190610_Accounts.cs" />
+    <Compile Include="Migrations\20200511190610_Accounts.designer.cs">
+      <DependentUpon>20200511190610_Accounts.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
     <Compile Include="Program.cs" />

@@ -33,6 +33,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.groupBoxCustomer = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxIDcustomer = new System.Windows.Forms.TextBox();
@@ -56,9 +59,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.buttonSave = new System.Windows.Forms.Button();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
-            this.comboBoxCustomer = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.groupBoxCustomer.SuspendLayout();
             this.groupBoxCar.SuspendLayout();
             this.groupBoxDetails.SuspendLayout();
@@ -127,6 +127,38 @@
             this.groupBoxCustomer.TabIndex = 36;
             this.groupBoxCustomer.TabStop = false;
             this.groupBoxCustomer.Text = "Dane klienta";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(54, 138);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(26, 17);
+            this.label14.TabIndex = 45;
+            this.label14.Text = "lub";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(6, 164);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(136, 17);
+            this.label13.TabIndex = 44;
+            this.label13.Text = "Wybierz klienta z bazy";
+            // 
+            // comboBoxCustomer
+            // 
+            this.comboBoxCustomer.BackColor = System.Drawing.Color.Gainsboro;
+            this.comboBoxCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBoxCustomer.FormattingEnabled = true;
+            this.comboBoxCustomer.Location = new System.Drawing.Point(140, 152);
+            this.comboBoxCustomer.Name = "comboBoxCustomer";
+            this.comboBoxCustomer.Size = new System.Drawing.Size(186, 29);
+            this.comboBoxCustomer.TabIndex = 43;
             // 
             // textBoxPhoneNumber
             // 
@@ -220,6 +252,7 @@
             this.comboBoxCar.Name = "comboBoxCar";
             this.comboBoxCar.Size = new System.Drawing.Size(186, 29);
             this.comboBoxCar.TabIndex = 41;
+            this.comboBoxCar.SelectedIndexChanged += new System.EventHandler(this.comboBoxCar_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -390,38 +423,6 @@
             this.pictureBoxClose.TabIndex = 29;
             this.pictureBoxClose.TabStop = false;
             this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
-            // 
-            // comboBoxCustomer
-            // 
-            this.comboBoxCustomer.BackColor = System.Drawing.Color.Gainsboro;
-            this.comboBoxCustomer.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBoxCustomer.FormattingEnabled = true;
-            this.comboBoxCustomer.Location = new System.Drawing.Point(140, 152);
-            this.comboBoxCustomer.Name = "comboBoxCustomer";
-            this.comboBoxCustomer.Size = new System.Drawing.Size(186, 29);
-            this.comboBoxCustomer.TabIndex = 43;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(6, 164);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(136, 17);
-            this.label13.TabIndex = 44;
-            this.label13.Text = "Wybierz klienta z bazy";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(54, 138);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(26, 17);
-            this.label14.TabIndex = 45;
-            this.label14.Text = "lub";
             // 
             // AddOrderForm
             // 

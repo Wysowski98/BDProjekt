@@ -46,19 +46,14 @@ namespace BD_UI
         // Submit data
         private void buttonAdd_Click(object sender, EventArgs e)
         {
-            var car = databaseContext.Set<Cars>();
-            car.Add(new Cars
+            databaseContext.Cars.Add(new Cars
             {
                 ProductionYear = int.Parse(textBoxYear.Text),
                 Body = textBoxBodyCar.Text,
                 EngineCapacity = Decimal.Parse(textBoxEngine.Text),
                 Price = Decimal.Parse(textBoxPrice.Text),
-                Model = databaseContext.Set<Models>()
-                .Where(model => model.Name == comboBoxModel.Text)
-                .FirstOrDefault<Models>(),
-                CarShowroom = databaseContext.Set<CarShowrooms>()
-                .Where(showroom => showroom.Address == comboBoxShowroomAdress.Text)
-                .FirstOrDefault<CarShowrooms>()
+                Model = databaseContext.Models.First(model => model.Name == comboBoxModel.Text),
+                CarShowroom = databaseContext.CarShowrooms.First(showroom => showroom.Address == comboBoxShowroomAdress.Text)
             });
             databaseContext.SaveChanges();
 

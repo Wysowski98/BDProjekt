@@ -37,16 +37,50 @@ namespace BD_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var emp = db.Set<Employees>();
-            var showRooms = db.Set<CarShowrooms>();
-            var showRoom = showRooms.Where(sr => sr.Address == comboBoxShowroom.Text).FirstOrDefault<CarShowrooms>();
-            var jobs = db.Set<Jobs>();
-            var job = jobs.Where(j => j.Name == comboBoxWorkerPosition.Text).FirstOrDefault<Jobs>();
-            emp.Add(new Employees { FirstName = textBoxName.Text, LastName = textBoxLastName.Text, PhoneNumber = textBoxPhoneNumber.Text, CarShowroom = showRoom, Job = job, DoucmentNumber = textBoxID.Text });
+            if (!String.IsNullOrWhiteSpace(textBoxName.Text))
+            {
+                if (!String.IsNullOrWhiteSpace(textBoxLastName.Text))
+                {
+                    if (!String.IsNullOrWhiteSpace(textBoxPhoneNumber.Text))
+                    {
+                        if (!String.IsNullOrWhiteSpace(textBoxID.Text))
+                        {
+                            if (!String.IsNullOrWhiteSpace(textBoxUsername.Text))
+                            {
+                                if (!String.IsNullOrWhiteSpace(textBoxPassword1.Text))
+                                {
+                                    if (!String.IsNullOrWhiteSpace(textBoxPassword2.Text))
+                                    {
+                                        if (textBoxPassword1.Text == textBoxPassword2.Text)
+                                        {
+                                            var emp = db.Set<Employees>();
+                                            var showRooms = db.Set<CarShowrooms>();
+                                            var showRoom = showRooms.Where(sr => sr.Address == comboBoxShowroom.Text).FirstOrDefault<CarShowrooms>();
+                                            var jobs = db.Set<Jobs>();
+                                            var job = jobs.Where(j => j.Name == comboBoxWorkerPosition.Text).FirstOrDefault<Jobs>();
 
-            db.SaveChanges();
+                                            emp.Add(new Employees { FirstName = textBoxName.Text, LastName = textBoxLastName.Text, PhoneNumber = textBoxPhoneNumber.Text, CarShowroom = showRoom, Job = job, DoucmentNumber = textBoxID.Text });
+                                            db.SaveChanges();
 
-            this.Close();
+                                            var accs = db.Set<Accounts>();
+                                            accs.Add(new Accounts
+                                            {
+                                                Login = textBoxUsername.Text,
+                                                Password = textBoxPassword1.Text,
+                                                Employee = db.Employees.FirstOrDefault(em => em.DoucmentNumber == textBoxID.Text)
+                                            });
+
+                                            db.SaveChanges();
+
+                                            this.Close();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }         
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)

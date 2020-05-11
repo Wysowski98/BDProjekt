@@ -30,7 +30,15 @@ namespace BD_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var client = db.Set<Clients>();
+            var clients = db.Set<Clients>();
+            clients.Add(new Clients
+            {
+                FirstName = textBoxName.Text,
+                LastName = textBoxLastName.Text,
+                DocumentNumber = textBoxID.Text,
+                PhoneNumber = textBoxPhoneNumber.Text
+            });
+            db.SaveChanges();
             this.Close();
         }
     }

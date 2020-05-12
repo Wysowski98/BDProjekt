@@ -38,7 +38,12 @@ namespace BD_UI
                     }
                 }               
             }
-            MessageBox.Show("Nieprawidłowy login lub hasło. Proszę spróbować ponownie.", "Logowanie nie powiodło się.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (this.Visible)
+            {
+                MessageBox.Show("Nieprawidłowy login lub hasło. Proszę spróbować ponownie.", "Logowanie nie powiodło się.", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            textBoxUsername.Clear();
+            textBoxPassword.Clear();
         }
 
         private void labelClose_Click(object sender, EventArgs e)

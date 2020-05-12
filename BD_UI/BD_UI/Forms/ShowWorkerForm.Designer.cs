@@ -32,13 +32,15 @@
             this.textBoxUsername = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBoxWorker = new System.Windows.Forms.GroupBox();
+            this.textBoxPosition = new System.Windows.Forms.TextBox();
+            this.textBoxShowroom = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxPhoneNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,8 +49,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.buttonDone = new System.Windows.Forms.Button();
-            this.textBoxShowroom = new System.Windows.Forms.TextBox();
-            this.textBoxPosition = new System.Windows.Forms.TextBox();
             this.groupBoxWorkerAccount.SuspendLayout();
             this.groupBoxWorker.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
@@ -98,7 +98,7 @@
             this.groupBoxWorker.Controls.Add(this.label4);
             this.groupBoxWorker.Controls.Add(this.textBoxID);
             this.groupBoxWorker.Controls.Add(this.label3);
-            this.groupBoxWorker.Controls.Add(this.textBoxName);
+            this.groupBoxWorker.Controls.Add(this.textBoxFirstName);
             this.groupBoxWorker.Controls.Add(this.label1);
             this.groupBoxWorker.Controls.Add(this.textBoxLastName);
             this.groupBoxWorker.Controls.Add(this.label2);
@@ -109,6 +109,28 @@
             this.groupBoxWorker.TabIndex = 63;
             this.groupBoxWorker.TabStop = false;
             this.groupBoxWorker.Text = "Dane pracownika";
+            // 
+            // textBoxPosition
+            // 
+            this.textBoxPosition.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPosition.Location = new System.Drawing.Point(26, 327);
+            this.textBoxPosition.Multiline = true;
+            this.textBoxPosition.Name = "textBoxPosition";
+            this.textBoxPosition.ReadOnly = true;
+            this.textBoxPosition.Size = new System.Drawing.Size(223, 21);
+            this.textBoxPosition.TabIndex = 46;
+            // 
+            // textBoxShowroom
+            // 
+            this.textBoxShowroom.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxShowroom.Location = new System.Drawing.Point(26, 270);
+            this.textBoxShowroom.Multiline = true;
+            this.textBoxShowroom.Name = "textBoxShowroom";
+            this.textBoxShowroom.ReadOnly = true;
+            this.textBoxShowroom.Size = new System.Drawing.Size(223, 21);
+            this.textBoxShowroom.TabIndex = 45;
             // 
             // label5
             // 
@@ -176,16 +198,16 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Numer dowodu";
             // 
-            // textBoxName
+            // textBoxFirstName
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxName.Location = new System.Drawing.Point(26, 54);
-            this.textBoxName.Multiline = true;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.ReadOnly = true;
-            this.textBoxName.Size = new System.Drawing.Size(223, 21);
-            this.textBoxName.TabIndex = 32;
+            this.textBoxFirstName.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFirstName.Location = new System.Drawing.Point(26, 54);
+            this.textBoxFirstName.Multiline = true;
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.ReadOnly = true;
+            this.textBoxFirstName.Size = new System.Drawing.Size(223, 21);
+            this.textBoxFirstName.TabIndex = 32;
             // 
             // label1
             // 
@@ -234,6 +256,7 @@
             this.listBoxWorkers.ScrollAlwaysVisible = true;
             this.listBoxWorkers.Size = new System.Drawing.Size(227, 310);
             this.listBoxWorkers.TabIndex = 62;
+            this.listBoxWorkers.SelectedIndexChanged += new System.EventHandler(this.listBoxWorkers_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -281,28 +304,6 @@
             this.buttonDone.UseVisualStyleBackColor = false;
             this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
-            // textBoxShowroom
-            // 
-            this.textBoxShowroom.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxShowroom.Location = new System.Drawing.Point(26, 270);
-            this.textBoxShowroom.Multiline = true;
-            this.textBoxShowroom.Name = "textBoxShowroom";
-            this.textBoxShowroom.ReadOnly = true;
-            this.textBoxShowroom.Size = new System.Drawing.Size(223, 21);
-            this.textBoxShowroom.TabIndex = 45;
-            // 
-            // textBoxPosition
-            // 
-            this.textBoxPosition.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxPosition.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPosition.Location = new System.Drawing.Point(26, 327);
-            this.textBoxPosition.Multiline = true;
-            this.textBoxPosition.Name = "textBoxPosition";
-            this.textBoxPosition.ReadOnly = true;
-            this.textBoxPosition.Size = new System.Drawing.Size(223, 21);
-            this.textBoxPosition.TabIndex = 46;
-            // 
             // ShowWorkerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -339,7 +340,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label label2;

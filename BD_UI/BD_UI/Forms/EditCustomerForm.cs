@@ -15,7 +15,7 @@ namespace BD_UI
 {
     public partial class EditCustomerForm : Form
     {
-        private DatabaseContext dbContext;
+        private DatabaseContext databaseContext;
 
         private bool checkEntries()
         {
@@ -39,10 +39,10 @@ namespace BD_UI
         {
             InitializeComponent();
             DesignTimeDbContextFactory factory = new DesignTimeDbContextFactory();
-            dbContext = factory.CreateDbContext();
+            databaseContext = factory.CreateDbContext();
             listBoxCustomers.Items.Clear();
 
-            var customers = dbContext.Set<Clients>();
+            var customers = databaseContext.Set<Clients>();
             foreach(Clients customer in customers)
             {
                 listBoxCustomers.Items.Add(customer.LastName + ", " + customer.FirstName + ", " + customer.DocumentNumber + ", " + customer.PhoneNumber + ", ID: " + customer.Id);
@@ -60,12 +60,12 @@ namespace BD_UI
             {
                 if(checkEntries())
                 {
-                    Clients customer = dbContext.Set<Clients>().FirstOrDefault(cl => cl.Id == Int32.Parse(listBoxCustomers.SelectedItem.ToString().Split(',')[4].Split(':')[1].Substring(1)));
+                    Clients customer = databaseContext.Set<Clients>().FirstOrDefault(cl => cl.Id == Int32.Parse(listBoxCustomers.SelectedItem.ToString().Split(',')[4].Split(':')[1].Substring(1)));
                     customer.DocumentNumber = textBoxIDcard.Text;
                     customer.FirstName = textBoxName.Text;
                     customer.LastName = textBoxLastName.Text;
                     customer.PhoneNumber = textBoxPhoneNumber.Text;
-                    dbContext.SaveChanges();
+                    databaseContext.SaveChanges();
                     this.Close();
                 }
                 else
@@ -83,9 +83,9 @@ namespace BD_UI
         {
             if (listBoxCustomers.SelectedIndex > -1)
             {
-                Clients customer = dbContext.Set<Clients>().FirstOrDefault(cl => cl.Id == Int32.Parse(listBoxCustomers.SelectedItem.ToString().Split(',')[4].Split(':')[1].Substring(1)));
-                dbContext.Set<Clients>().Remove(customer);
-                dbContext.SaveChanges();
+                Clients customer = databaseContext.Set<Clients>().FirstOrDefault(cl => cl.Id == Int32.Parse(listBoxCustomers.SelectedItem.ToString().Split(',')[4].Split(':')[1].Substring(1)));
+                databaseContext.Set<Clients>().Remove(customer);
+                databaseContext.SaveChanges();
                 this.Close();
             }
             else
@@ -96,7 +96,7 @@ namespace BD_UI
 
         private void listBoxCustomers_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Clients customer = dbContext.Set<Clients>().FirstOrDefault(cl => cl.Id == Int32.Parse(listBoxCustomers.SelectedItem.ToString().Split(',')[4].Split(':')[1].Substring(1)));
+            Clients customer = databaseContext.Set<Clients>().FirstOrDefault(cl => cl.Id == Int32.Parse(listBoxCustomers.SelectedItem.ToString().Split(',')[4].Split(':')[1].Substring(1)));
             textBoxIDcard.Text = customer.DocumentNumber;
             textBoxLastName.Text = customer.LastName;
             textBoxName.Text = customer.FirstName;

@@ -15,7 +15,7 @@ namespace BD_UI
 {
     public partial class EditCarForm : Form
     {
-        private DatabaseContext dbContext;
+        private DatabaseContext databaseContext;
 
         private bool checkEntries()
         {
@@ -46,20 +46,20 @@ namespace BD_UI
             InitializeComponent();
             listBoxCars.ScrollAlwaysVisible = true;
             DesignTimeDbContextFactory factory = new DesignTimeDbContextFactory();
-            dbContext = factory.CreateDbContext();
+            databaseContext = factory.CreateDbContext();
             listBoxCars.Items.Clear();
 
-            var cars = dbContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model);
+            var cars = databaseContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model);
             foreach (Cars car in cars)
             {              
                 listBoxCars.Items.Add(car.Model.Name + ", " + car.ProductionYear + ", " + car.Body + ", ID: " + car.Id);
             }
-            var brands = dbContext.Set<CarBrands>();
+            var brands = databaseContext.Set<CarBrands>();
             foreach(CarBrands brand in brands)
             {
                 comboBoxBrand.Items.Add(brand.Name);
             }
-            var showrooms = dbContext.Set<CarShowrooms>();
+            var showrooms = databaseContext.Set<CarShowrooms>();
             foreach(CarShowrooms cs in showrooms)
             {
                 comboBoxAdress.Items.Add(cs.Address + ", " + cs.Name);
@@ -77,19 +77,19 @@ namespace BD_UI
             {
                 if (checkEntries())
                 {
-                    Cars car = dbContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model).ThenInclude(m => m.Brand).FirstOrDefault(c => c.Id == Int32.Parse(listBoxCars.SelectedItem.ToString().Split(',')[3].Split(':')[1].Substring(1)));
+                    Cars car = databaseContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model).ThenInclude(m => m.Brand).FirstOrDefault(c => c.Id == Int32.Parse(listBoxCars.SelectedItem.ToString().Split(',')[3].Split(':')[1].Substring(1)));
                     car.Body = textBoxBodyCar.Text;
                     car.EngineCapacity = Decimal.Parse(textBoxEngine.Text);
                     car.Price = Decimal.Parse(textBoxPrice.Text);
                     car.ProductionYear = Int32.Parse(textBoxYear.Text);
-                    car.Model = dbContext.Set<Models>().Include(m => m.Brand).FirstOrDefault(m => m.Name == comboBoxModel.Text && m.Brand.Name == comboBoxBrand.Text);
+                    car.Model = databaseContext.Set<Models>().Include(m => m.Brand).FirstOrDefault(m => m.Name == comboBoxModel.Text && m.Brand.Name == comboBoxBrand.Text);
 
                     if (comboBoxAdress.SelectedIndex > -1)
-                        car.CarShowroom = dbContext.Set<CarShowrooms>().FirstOrDefault(cs => cs.Address == comboBoxAdress.SelectedItem.ToString().Split(',')[0]);
+                        car.CarShowroom = databaseContext.Set<CarShowrooms>().FirstOrDefault(cs => cs.Address == comboBoxAdress.SelectedItem.ToString().Split(',')[0]);
                     else
                         car.CarShowroom = null;
 
-                    dbContext.SaveChanges();
+                    databaseContext.SaveChanges();
                     this.Close();
                 }
                 else
@@ -107,9 +107,9 @@ namespace BD_UI
         {
             if (listBoxCars.SelectedIndex > -1)
             {
-                Cars car = dbContext.Set<Cars>().FirstOrDefault(c => c.Id == Int32.Parse(listBoxCars.SelectedItem.ToString().Split(',')[3].Split(':')[1].Substring(1)));
-                dbContext.Set<Cars>().Remove(car);
-                dbContext.SaveChanges();
+                Cars car = databaseContext.Set<Cars>().FirstOrDefault(c => c.Id == Int32.Parse(listBoxCars.SelectedItem.ToString().Split(',')[3].Split(':')[1].Substring(1)));
+                databaseContext.Set<Cars>().Remove(car);
+                databaseContext.SaveChanges();
                 this.Close();
             }
             else
@@ -122,7 +122,7 @@ namespace BD_UI
         {
             comboBoxModel.Items.Clear();
             var brandName = comboBoxBrand.SelectedItem.ToString();
-            var models = dbContext.Set<Models>().Include(m => m.Brand);
+            var models = databaseContext.Set<Models>().Include(m => m.Brand);
             foreach(Models model in models)
             {
                 if (model.Brand.Name == brandName)
@@ -132,7 +132,7 @@ namespace BD_UI
 
         private void listBoxCars_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var cars = dbContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model).ThenInclude(m => m.Brand);
+            var cars = databaseContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model).ThenInclude(m => m.Brand);
             
             Cars car = cars.FirstOrDefault(
             cr => 

@@ -36,17 +36,17 @@
             this.textBoxBrandName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBoxWorker = new System.Windows.Forms.GroupBox();
-            this.listBoxWorkers = new System.Windows.Forms.ListBox();
+            this.listBoxJobs = new System.Windows.Forms.ListBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxWorkerName = new System.Windows.Forms.TextBox();
-            this.textBoxWorkerID = new System.Windows.Forms.TextBox();
+            this.textBoxJobName = new System.Windows.Forms.TextBox();
+            this.textBoxJobID = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.buttonModify = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.listBoxModel = new System.Windows.Forms.ListBox();
+            this.listBoxModels = new System.Windows.Forms.ListBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxModelBrandID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -100,6 +100,7 @@
             this.listBoxBrands.ScrollAlwaysVisible = true;
             this.listBoxBrands.Size = new System.Drawing.Size(143, 106);
             this.listBoxBrands.TabIndex = 7;
+            this.listBoxBrands.SelectedIndexChanged += new System.EventHandler(this.listBoxBrands_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -145,10 +146,10 @@
             // 
             // groupBoxWorker
             // 
-            this.groupBoxWorker.Controls.Add(this.listBoxWorkers);
+            this.groupBoxWorker.Controls.Add(this.listBoxJobs);
             this.groupBoxWorker.Controls.Add(this.label3);
-            this.groupBoxWorker.Controls.Add(this.textBoxWorkerName);
-            this.groupBoxWorker.Controls.Add(this.textBoxWorkerID);
+            this.groupBoxWorker.Controls.Add(this.textBoxJobName);
+            this.groupBoxWorker.Controls.Add(this.textBoxJobID);
             this.groupBoxWorker.Controls.Add(this.label4);
             this.groupBoxWorker.Cursor = System.Windows.Forms.Cursors.Default;
             this.groupBoxWorker.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -159,20 +160,21 @@
             this.groupBoxWorker.TabStop = false;
             this.groupBoxWorker.Text = "Stanowisko pracownika";
             // 
-            // listBoxWorkers
+            // listBoxJobs
             // 
-            this.listBoxWorkers.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listBoxWorkers.FormattingEnabled = true;
-            this.listBoxWorkers.ItemHeight = 17;
-            this.listBoxWorkers.Items.AddRange(new object[] {
+            this.listBoxJobs.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxJobs.FormattingEnabled = true;
+            this.listBoxJobs.ItemHeight = 17;
+            this.listBoxJobs.Items.AddRange(new object[] {
             "pracownik1",
             "pracownik2",
             "pracownik3"});
-            this.listBoxWorkers.Location = new System.Drawing.Point(6, 37);
-            this.listBoxWorkers.Name = "listBoxWorkers";
-            this.listBoxWorkers.ScrollAlwaysVisible = true;
-            this.listBoxWorkers.Size = new System.Drawing.Size(145, 106);
-            this.listBoxWorkers.TabIndex = 6;
+            this.listBoxJobs.Location = new System.Drawing.Point(6, 37);
+            this.listBoxJobs.Name = "listBoxJobs";
+            this.listBoxJobs.ScrollAlwaysVisible = true;
+            this.listBoxJobs.Size = new System.Drawing.Size(145, 106);
+            this.listBoxJobs.TabIndex = 6;
+            this.listBoxJobs.SelectedIndexChanged += new System.EventHandler(this.listBoxJobs_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -185,25 +187,25 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Nazwa stanowiska";
             // 
-            // textBoxWorkerName
+            // textBoxJobName
             // 
-            this.textBoxWorkerName.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxWorkerName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxWorkerName.Location = new System.Drawing.Point(161, 57);
-            this.textBoxWorkerName.Multiline = true;
-            this.textBoxWorkerName.Name = "textBoxWorkerName";
-            this.textBoxWorkerName.Size = new System.Drawing.Size(186, 21);
-            this.textBoxWorkerName.TabIndex = 1;
+            this.textBoxJobName.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxJobName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxJobName.Location = new System.Drawing.Point(161, 57);
+            this.textBoxJobName.Multiline = true;
+            this.textBoxJobName.Name = "textBoxJobName";
+            this.textBoxJobName.Size = new System.Drawing.Size(186, 21);
+            this.textBoxJobName.TabIndex = 1;
             // 
-            // textBoxWorkerID
+            // textBoxJobID
             // 
-            this.textBoxWorkerID.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxWorkerID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxWorkerID.Location = new System.Drawing.Point(210, 111);
-            this.textBoxWorkerID.Multiline = true;
-            this.textBoxWorkerID.Name = "textBoxWorkerID";
-            this.textBoxWorkerID.Size = new System.Drawing.Size(85, 21);
-            this.textBoxWorkerID.TabIndex = 4;
+            this.textBoxJobID.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxJobID.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxJobID.Location = new System.Drawing.Point(210, 111);
+            this.textBoxJobID.Multiline = true;
+            this.textBoxJobID.Name = "textBoxJobID";
+            this.textBoxJobID.Size = new System.Drawing.Size(85, 21);
+            this.textBoxJobID.TabIndex = 4;
             // 
             // label4
             // 
@@ -266,7 +268,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.listBoxModel);
+            this.groupBox1.Controls.Add(this.listBoxModels);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.textBoxModelBrandID);
             this.groupBox1.Controls.Add(this.label6);
@@ -282,20 +284,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Model pojazdu";
             // 
-            // listBoxModel
+            // listBoxModels
             // 
-            this.listBoxModel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.listBoxModel.FormattingEnabled = true;
-            this.listBoxModel.ItemHeight = 17;
-            this.listBoxModel.Items.AddRange(new object[] {
+            this.listBoxModels.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.listBoxModels.FormattingEnabled = true;
+            this.listBoxModels.ItemHeight = 17;
+            this.listBoxModels.Items.AddRange(new object[] {
             "model1",
             "model2",
             "model3"});
-            this.listBoxModel.Location = new System.Drawing.Point(25, 42);
-            this.listBoxModel.Name = "listBoxModel";
-            this.listBoxModel.ScrollAlwaysVisible = true;
-            this.listBoxModel.Size = new System.Drawing.Size(145, 174);
-            this.listBoxModel.TabIndex = 8;
+            this.listBoxModels.Location = new System.Drawing.Point(25, 42);
+            this.listBoxModels.Name = "listBoxModels";
+            this.listBoxModels.ScrollAlwaysVisible = true;
+            this.listBoxModels.Size = new System.Drawing.Size(145, 174);
+            this.listBoxModels.TabIndex = 8;
+            this.listBoxModels.SelectedIndexChanged += new System.EventHandler(this.listBoxModels_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -397,17 +400,17 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBoxWorker;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxWorkerName;
-        private System.Windows.Forms.TextBox textBoxWorkerID;
+        private System.Windows.Forms.TextBox textBoxJobName;
+        private System.Windows.Forms.TextBox textBoxJobID;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ListBox listBoxBrands;
-        private System.Windows.Forms.ListBox listBoxWorkers;
+        private System.Windows.Forms.ListBox listBoxJobs;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.Button buttonModify;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ListBox listBoxModel;
+        private System.Windows.Forms.ListBox listBoxModels;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxModelBrandID;
         private System.Windows.Forms.Label label6;

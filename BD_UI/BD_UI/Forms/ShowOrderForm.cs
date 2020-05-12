@@ -59,7 +59,7 @@ namespace BD_UI
             textBoxPrice.Text = order.Price.ToString();
             textBoxFirstName.Text = client.FirstName;
             textBoxLastName.Text = client.LastName;
-            textBoxCustomerID.Text = client.Id.ToString();
+            textBoxCustomerID.Text = client.DocumentNumber;
             textBoxPhoneNumber.Text = client.PhoneNumber;
             textBoxCar.Text = brand.Name + " " + model.Name;
             textBoxShowroom.Text = showroom.Name;

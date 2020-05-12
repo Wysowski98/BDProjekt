@@ -32,8 +32,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBoxShowroomID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBoxShowroomName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxShowroomAdress = new System.Windows.Forms.TextBox();
@@ -65,6 +63,7 @@
             this.listBoxShowrooms.ScrollAlwaysVisible = true;
             this.listBoxShowrooms.Size = new System.Drawing.Size(237, 310);
             this.listBoxShowrooms.TabIndex = 4;
+            this.listBoxShowrooms.SelectedIndexChanged += new System.EventHandler(this.listBoxShowrooms_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -90,40 +89,17 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBoxShowroomID);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.textBoxShowroomName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBoxShowroomAdress);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.groupBox1.Location = new System.Drawing.Point(313, 22);
+            this.groupBox1.Location = new System.Drawing.Point(313, 105);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(262, 213);
+            this.groupBox1.Size = new System.Drawing.Size(262, 150);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dane salonu";
-            // 
-            // textBoxShowroomID
-            // 
-            this.textBoxShowroomID.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxShowroomID.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxShowroomID.Location = new System.Drawing.Point(6, 168);
-            this.textBoxShowroomID.Multiline = true;
-            this.textBoxShowroomID.Name = "textBoxShowroomID";
-            this.textBoxShowroomID.Size = new System.Drawing.Size(250, 21);
-            this.textBoxShowroomID.TabIndex = 37;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(95, 148);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 17);
-            this.label3.TabIndex = 36;
-            this.label3.Text = "ID salonu";
             // 
             // textBoxShowroomName
             // 
@@ -301,8 +277,6 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBoxClose;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBoxShowroomID;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textBoxShowroomName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxShowroomAdress;

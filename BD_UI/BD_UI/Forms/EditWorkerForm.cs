@@ -23,6 +23,7 @@ namespace BD_UI
             databaseContext = fac.CreateDbContext();
             InitializeComponent();
             FillListBox();
+            FillComboBoxes();
         }
 
         private void FillListBox()
@@ -124,8 +125,6 @@ namespace BD_UI
             var showroom = databaseContext.CarShowrooms.FirstOrDefault(cs => cs == employee.CarShowroom);
             var job = databaseContext.Jobs.FirstOrDefault(j => j == employee.Job);
             var account = databaseContext.Accounts.First(acc => acc.Employee == employee);
-
-            FillComboBoxes();
 
             textBoxFirstName.Text = employee.FirstName;
             textBoxLastName.Text = employee.LastName;

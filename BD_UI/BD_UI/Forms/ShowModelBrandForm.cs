@@ -27,21 +27,21 @@ namespace BD_UI
         private void FillListBoxes()
         {
             listBoxBrands.Items.Clear();
+            listBoxModels.Items.Clear();
+            listBoxJobs.Items.Clear();
+
             var brands = databaseContext.Set<CarBrands>();
+            var models = databaseContext.Set<Models>();
+            var jobs = databaseContext.Set<Jobs>();
+
             foreach (CarBrands brand in brands)
             {
                 listBoxBrands.Items.Add(brand.Name);
             }
-
-            listBoxModels.Items.Clear();
-            var models = databaseContext.Set<Models>();
             foreach (Models model in models)
             {
                 listBoxModels.Items.Add(model.Name);
             }
-
-            listBoxJobs.Items.Clear();
-            var jobs = databaseContext.Set<Jobs>();
             foreach(Jobs job in jobs)
             {
                 listBoxJobs.Items.Add(job.Name);
@@ -62,6 +62,7 @@ namespace BD_UI
         {
             var brand = databaseContext.CarBrands.First(b =>
                 listBoxBrands.SelectedItem.ToString().Contains(b.Name));
+
             textBoxBrandID.Text = brand.Id.ToString();
             textBoxBrandName.Text = brand.Name;
         }
@@ -70,6 +71,7 @@ namespace BD_UI
         {
             var model = databaseContext.Models.First(m =>
                 listBoxModels.SelectedItem.ToString().Contains(m.Name));
+
             textBoxModelID.Text = model.Id.ToString();
             textBoxModelBrandID.Text = model.Brand.Id.ToString();
             textBoxModelName.Text = model.Name;
@@ -79,6 +81,7 @@ namespace BD_UI
         {
             var job = databaseContext.Jobs.First(j =>
                 listBoxJobs.SelectedItem.ToString().Contains(j.Name));
+
             textBoxJobID.Text = job.Id.ToString();
             textBoxJobName.Text = job.Name;
         }

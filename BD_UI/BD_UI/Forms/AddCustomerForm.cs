@@ -14,13 +14,13 @@ namespace BD_UI
 {
     public partial class AddCustomerForm : Form
     {
-        private DatabaseContext db;
+        private DatabaseContext databaseContext;
 
         public AddCustomerForm()
         {
             InitializeComponent();
             DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
-            db = fac.CreateDbContext();
+            databaseContext = fac.CreateDbContext();
         }
 
         private void pictureBoxClose_Click(object sender, EventArgs e)
@@ -30,7 +30,7 @@ namespace BD_UI
 
         private void buttonSave_Click(object sender, EventArgs e)
         {
-            var clients = db.Set<Clients>();
+            var clients = databaseContext.Set<Clients>();
             clients.Add(new Clients
             {
                 FirstName = textBoxName.Text,
@@ -38,7 +38,7 @@ namespace BD_UI
                 DocumentNumber = textBoxID.Text,
                 PhoneNumber = textBoxPhoneNumber.Text
             });
-            db.SaveChanges();
+            databaseContext.SaveChanges();
             this.Close();
         }
     }

@@ -14,24 +14,29 @@ namespace BD_UI
 {
     public partial class AddWorkerForm : Form
     {
-        private DatabaseContext db;
+        private DatabaseContext databaseContext;
 
         public AddWorkerForm()
         {
-            InitializeComponent();
             DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
-            db = fac.CreateDbContext();
+            databaseContext = fac.CreateDbContext();
+            InitializeComponent();
+            FillListBoxes();
+        }
 
-            var showRooms = db.Set<CarShowrooms>();
-            foreach (CarShowrooms cs in showRooms)
+        private void FillListBoxes()
+        {
+            var showrooms = databaseContext.Set<CarShowrooms>();
+            var jobs = databaseContext.Set<Jobs>();
+
+            foreach (CarShowrooms showroom in showrooms)
             {
-                comboBoxShowroom.Items.Add(cs.Address);
+                comboBoxShowroom.Items.Add(showroom.Address);
             }
-            var jbs = db.Set<Jobs>();
-            foreach (Jobs j in jbs)
+            foreach (Jobs job in jobs)
             {
-                if (j.Name != "Administrator")
-                    comboBoxWorkerPosition.Items.Add(j.Name);
+                if (job.Name != "Administrator")
+                    comboBoxWorkerPosition.Items.Add(job.Name);
             }
         }
 
@@ -53,24 +58,24 @@ namespace BD_UI
                                     {
                                         if (textBoxPassword1.Text == textBoxPassword2.Text)
                                         {
-                                            var emp = db.Set<Employees>();
-                                            var showRooms = db.Set<CarShowrooms>();
+                                            var emp = databaseContext.Set<Employees>();
+                                            var showRooms = databaseContext.Set<CarShowrooms>();
                                             var showRoom = showRooms.Where(sr => sr.Address == comboBoxShowroom.Text).FirstOrDefault<CarShowrooms>();
-                                            var jobs = db.Set<Jobs>();
+                                            var jobs = databaseContext.Set<Jobs>();
                                             var job = jobs.Where(j => j.Name == comboBoxWorkerPosition.Text).FirstOrDefault<Jobs>();
 
                                             emp.Add(new Employees { FirstName = textBoxName.Text, LastName = textBoxLastName.Text, PhoneNumber = textBoxPhoneNumber.Text, CarShowroom = showRoom, Job = job, DoucmentNumber = textBoxID.Text });
-                                            db.SaveChanges();
+                                            databaseContext.SaveChanges();
 
-                                            var accs = db.Set<Accounts>();
+                                            var accs = databaseContext.Set<Accounts>();
                                             accs.Add(new Accounts
                                             {
                                                 Login = textBoxUsername.Text,
                                                 Password = textBoxPassword1.Text,
-                                                Employee = db.Employees.FirstOrDefault(em => em.DoucmentNumber == textBoxID.Text)
+                                                Employee = databaseContext.Employees.FirstOrDefault(em => em.DoucmentNumber == textBoxID.Text)
                                             });
 
-                                            db.SaveChanges();
+                                            databaseContext.SaveChanges();
 
                                             this.Close();
                                         }

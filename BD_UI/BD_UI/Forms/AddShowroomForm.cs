@@ -16,27 +16,31 @@ namespace BD_UI
 {
     public partial class AddShowroomForm : Form
     {
-        private DatabaseContext dbContext;
+        private DatabaseContext databaseContext;
 
         public AddShowroomForm()
         {
+            DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
+            databaseContext = fac.CreateDbContext();
             InitializeComponent();
+            FillListBoxes();
+        }
+
+        private void FillListBoxes()
+        {
             checkedListBoxWorkers.Items.Clear();
             checkedListBoxCars.Items.Clear();
 
-            DesignTimeDbContextFactory fac = new DesignTimeDbContextFactory();
-            dbContext = fac.CreateDbContext();
-
-            var emps = dbContext.Set<Employees>().Include(e => e.CarShowroom);
-            foreach (Employees emp in emps)
+            var employees = databaseContext.Set<Employees>().Include(e => e.CarShowroom);
+            foreach (Employees employee in employees)
             {
-                if(emp.CarShowroom == null)
-                    checkedListBoxWorkers.Items.Add(emp.LastName + ", " + emp.FirstName);
+                if (employee.CarShowroom == null)
+                    checkedListBoxWorkers.Items.Add(employee.LastName + ", " + employee.FirstName);
             }
-            var cars = dbContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model);          
+            var cars = databaseContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model);
             foreach (Cars car in cars)
             {
-                if(car.CarShowroom == null)
+                if (car.CarShowroom == null)
                     checkedListBoxCars.Items.Add(car.Model.Name + ", " + car.ProductionYear + ", " + car.Body);
             }
         }
@@ -52,15 +56,15 @@ namespace BD_UI
             {
                 if (!String.IsNullOrWhiteSpace(textBoxShowroomAdress.Text))
                 {
-                    dbContext.CarShowrooms.Add(new CarShowrooms
+                    databaseContext.CarShowrooms.Add(new CarShowrooms
                     {
                         Name = textBoxShowroomName.Text,
                         Address = textBoxShowroomAdress.Text                        
                     });
-                    dbContext.SaveChanges();
+                    databaseContext.SaveChanges();
 
-                    var emps = dbContext.Set<Employees>();
-                    var cars = dbContext.Set<Cars>().Include(c => c.Model);
+                    var emps = databaseContext.Set<Employees>();
+                    var cars = databaseContext.Set<Cars>().Include(c => c.Model);
                     foreach (Object item in checkedListBoxWorkers.CheckedItems)
                     {
                         Employees emp = emps.FirstOrDefault(
@@ -68,7 +72,7 @@ namespace BD_UI
                             em.LastName == item.ToString().Split(',')[0] && em.FirstName == item.ToString().Split(',')[1].Substring(1)
                             );
 
-                        emp.CarShowroom = dbContext.CarShowrooms.FirstOrDefault(
+                        emp.CarShowroom = databaseContext.CarShowrooms.FirstOrDefault(
                             cs =>
                             cs.Name == textBoxShowroomName.Text && cs.Address == textBoxShowroomAdress.Text
                             );
@@ -79,13 +83,13 @@ namespace BD_UI
                             cr =>
                             cr.Model.Name == item.ToString().Split(',')[0] && cr.ProductionYear == Int32.Parse(item.ToString().Split(',')[1].Substring(1)) && cr.Body == item.ToString().Split(',')[2].Substring(1)
                             );
-                        car.CarShowroom = dbContext.CarShowrooms.FirstOrDefault(
+                        car.CarShowroom = databaseContext.CarShowrooms.FirstOrDefault(
                            cs =>
                            cs.Name == textBoxShowroomName.Text && cs.Address == textBoxShowroomAdress.Text
                            );
                     }
                   
-                    dbContext.SaveChanges();
+                    databaseContext.SaveChanges();
                     this.Close();
                 }
             }

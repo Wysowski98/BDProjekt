@@ -40,7 +40,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBoxName = new System.Windows.Forms.TextBox();
+            this.textBoxFirstName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxLastName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -95,6 +95,7 @@
             this.listBoxWorkers.ScrollAlwaysVisible = true;
             this.listBoxWorkers.Size = new System.Drawing.Size(227, 140);
             this.listBoxWorkers.TabIndex = 55;
+            this.listBoxWorkers.SelectedIndexChanged += new System.EventHandler(this.listBoxWorkers_SelectedIndexChanged);
             // 
             // groupBoxWorker
             // 
@@ -106,7 +107,7 @@
             this.groupBoxWorker.Controls.Add(this.label4);
             this.groupBoxWorker.Controls.Add(this.textBoxID);
             this.groupBoxWorker.Controls.Add(this.label3);
-            this.groupBoxWorker.Controls.Add(this.textBoxName);
+            this.groupBoxWorker.Controls.Add(this.textBoxFirstName);
             this.groupBoxWorker.Controls.Add(this.label1);
             this.groupBoxWorker.Controls.Add(this.textBoxLastName);
             this.groupBoxWorker.Controls.Add(this.label2);
@@ -202,15 +203,15 @@
             this.label3.TabIndex = 36;
             this.label3.Text = "Numer dowodu";
             // 
-            // textBoxName
+            // textBoxFirstName
             // 
-            this.textBoxName.BackColor = System.Drawing.Color.Gainsboro;
-            this.textBoxName.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxName.Location = new System.Drawing.Point(26, 54);
-            this.textBoxName.Multiline = true;
-            this.textBoxName.Name = "textBoxName";
-            this.textBoxName.Size = new System.Drawing.Size(223, 21);
-            this.textBoxName.TabIndex = 32;
+            this.textBoxFirstName.BackColor = System.Drawing.Color.Gainsboro;
+            this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxFirstName.Location = new System.Drawing.Point(26, 54);
+            this.textBoxFirstName.Multiline = true;
+            this.textBoxFirstName.Name = "textBoxFirstName";
+            this.textBoxFirstName.Size = new System.Drawing.Size(223, 21);
+            this.textBoxFirstName.TabIndex = 32;
             // 
             // label1
             // 
@@ -402,7 +403,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBoxID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxName;
+        private System.Windows.Forms.TextBox textBoxFirstName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxLastName;
         private System.Windows.Forms.Label label2;

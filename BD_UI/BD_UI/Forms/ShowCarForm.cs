@@ -29,6 +29,7 @@ namespace BD_UI
         private void FillListBox()
         {
             listBoxCars.Items.Clear();
+
             var cars = databaseContext.Set<Cars>().Include(c => c.Model);
             var models = databaseContext.Set<Models>().Include(m => m.Brand);
             foreach(Cars car in cars)

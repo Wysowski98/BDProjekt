@@ -28,6 +28,7 @@ namespace BD_UI
         private void FillListBox()
         {
             listBoxOrders.Items.Clear();
+
             var orders = databaseContext.Set<Orders>();
             foreach(Orders order in orders)
             {
@@ -47,6 +48,8 @@ namespace BD_UI
 
         private void listBoxOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
+            listBoxServices.Items.Clear();
+
             var order = databaseContext.Orders.Include(o => o.Car).Include(o => o.Client).First(o =>
                 listBoxOrders.SelectedItem.ToString().Contains(o.Id.ToString()));
             var client = databaseContext.Clients.First(c => c == order.Client);
@@ -63,7 +66,6 @@ namespace BD_UI
             textBoxPhoneNumber.Text = client.PhoneNumber;
             textBoxCar.Text = brand.Name + " " + model.Name;
             textBoxShowroom.Text = showroom.Name;
-            listBoxServices.Items.Clear();
         }
     }
 }

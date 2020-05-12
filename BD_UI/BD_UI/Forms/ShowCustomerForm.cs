@@ -27,6 +27,7 @@ namespace BD_UI
         private void FillListBox()
         {
             listBoxCustomers.Items.Clear();
+
             var clients = databaseContext.Set<Clients>();
             foreach (Clients client in clients)
             {

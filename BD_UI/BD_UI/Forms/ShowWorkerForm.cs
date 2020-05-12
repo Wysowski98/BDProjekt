@@ -28,6 +28,7 @@ namespace BD_UI
         private void FillListBox()
         {
             listBoxWorkers.Items.Clear();
+
             var employees = databaseContext.Set<Employees>();
             foreach(Employees employee in employees)
             {

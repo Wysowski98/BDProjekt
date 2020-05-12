@@ -236,6 +236,7 @@
             this.listBoxShowrooms.ScrollAlwaysVisible = true;
             this.listBoxShowrooms.Size = new System.Drawing.Size(237, 310);
             this.listBoxShowrooms.TabIndex = 51;
+            this.listBoxShowrooms.SelectedIndexChanged += new System.EventHandler(this.listBoxShowrooms_SelectedIndexChanged);
             // 
             // buttonDone
             // 

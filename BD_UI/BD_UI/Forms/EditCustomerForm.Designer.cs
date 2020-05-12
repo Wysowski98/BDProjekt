@@ -61,6 +61,7 @@
             this.listBoxCustomers.ScrollAlwaysVisible = true;
             this.listBoxCustomers.Size = new System.Drawing.Size(237, 395);
             this.listBoxCustomers.TabIndex = 4;
+            this.listBoxCustomers.SelectedIndexChanged += new System.EventHandler(this.listBoxCustomers_SelectedIndexChanged);
             // 
             // label9
             // 

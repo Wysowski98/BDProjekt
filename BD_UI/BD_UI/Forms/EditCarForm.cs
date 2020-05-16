@@ -47,6 +47,7 @@ namespace BD_UI
             listBoxCars.ScrollAlwaysVisible = true;
             DesignTimeDbContextFactory factory = new DesignTimeDbContextFactory();
             databaseContext = factory.CreateDbContext();
+
             listBoxCars.Items.Clear();
 
             var cars = databaseContext.Set<Cars>().Include(c => c.CarShowroom).Include(c => c.Model);

@@ -36,11 +36,13 @@ namespace BD_UI
                     comboBoxCustomer.Items.Add(client.FirstName + " " + client.LastName);
                 }
             }
-
-            var models = databaseContext.Set<Models>().Include(m => m.Brand);
-            foreach (Models model in models)
+            var cars = databaseContext.Set<Cars>().Include(c => c.Model).Include(c => c.CarShowroom);
+            foreach (Cars car in cars)
             {
-                comboBoxCar.Items.Add(model.Brand.Name + " " + model.Name);
+                var model = databaseContext.Models.Include(m => m.Brand).First(m => m == car.Model);
+                var brand = databaseContext.CarBrands.First(b => b == model.Brand);
+                comboBoxCar.Items.Add(
+                    car.Id.ToString() + ". " + brand.Name + " " + model.Name + ", " + car.ProductionYear + " " + car.Body);
             }
 
             var showrooms = databaseContext.Set<CarShowrooms>();
@@ -73,54 +75,64 @@ namespace BD_UI
                     PhoneNumber = textBoxPhoneNumber.Text,
                     DocumentNumber = textBoxIDcustomer.Text
                 };
+                databaseContext.Clients.Add(client);
             }
-            var car = databaseContext.Cars.FirstOrDefault(c => comboBoxCar.SelectedItem.ToString().Contains(c.Model.Name));
-
-            if (checkedListServices.CheckedItems.Count > 0)
+            var car = databaseContext.Cars.Include(c => c.CarShowroom).FirstOrDefault(c =>
+                comboBoxCar.SelectedItem.ToString().Contains(c.Model.Name));
+            var showroom = databaseContext.CarShowrooms.FirstOrDefault(cs =>
+                comboBoxShowroom.SelectedItem.ToString().Contains(cs.Name));
+            if (car.CarShowroom != showroom)
             {
-                String services = "";
-
-                foreach (Object item in checkedListServices.CheckedItems)
-                {
-                    services += (item.ToString() + ", ");
-                }
-                services.TrimEnd(',');
-
-                databaseContext.Orders.Add(new Orders
-                {
-                    Car = car,
-                    Client = client,
-                    Price = int.Parse(textBoxPrice.Text),
-                    OrderDate = dateTimePickerDate1.Value,
-                    RealizationDate = dateTimePickerDate2.Value,
-                    AdditionalServices = services
-                });
+                MessageBox.Show("Wybrany samochód nie jest dostępny w salonie " + showroom.Name + "!");
+            }
+            else if (dateTimePickerDate1.Value > dateTimePickerDate2.Value)
+            {
+                MessageBox.Show("Wybrana data realizacji zamówienia jest błędna!");
             }
             else
             {
-                databaseContext.Orders.Add(new Orders
+                if (checkedListServices.CheckedItems.Count > 0)
                 {
-                    Car = car,
-                    Client = client,
-                    Price = int.Parse(textBoxPrice.Text),
-                    OrderDate = dateTimePickerDate1.Value,
-                    RealizationDate = dateTimePickerDate2.Value
-                });
-            }
-            databaseContext.SaveChanges();
+                    String services = "";
 
-            this.Close();
+                    foreach (Object item in checkedListServices.CheckedItems)
+                    {
+                        services += (item.ToString() + ", ");
+                    }
+                    services.TrimEnd(',');
+
+                    databaseContext.Orders.Add(new Orders
+                    {
+                        Car = car,
+                        Client = client,
+                        Price = int.Parse(textBoxPrice.Text),
+                        OrderDate = dateTimePickerDate1.Value,
+                        RealizationDate = dateTimePickerDate2.Value,
+                        AdditionalServices = services
+                    });
+                }
+                else
+                {
+                    databaseContext.Orders.Add(new Orders
+                    {
+                        Car = car,
+                        Client = client,
+                        Price = int.Parse(textBoxPrice.Text),
+                        OrderDate = dateTimePickerDate1.Value,
+                        RealizationDate = dateTimePickerDate2.Value
+                    });
+                }
+                databaseContext.SaveChanges();
+                this.Close();
+            }
         }
 
         private void comboBoxCar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            comboBoxShowroom.Items.Clear();
-            var selectedCar = databaseContext.Cars.FirstOrDefault(c => comboBoxCar.SelectedItem.ToString().Contains(c.Model.Name));
-            var showrooms = databaseContext.Set<CarShowrooms>().Where(showroom => showroom.Cars.Contains(selectedCar));
-            foreach(CarShowrooms showroom in showrooms)
-            {
-                comboBoxShowroom.Items.Add(showroom.Name);
-            }
+            var car = databaseContext.Cars.Include(c => c.CarShowroom).FirstOrDefault(c =>
+                comboBoxCar.SelectedItem.ToString().Contains(c.Id.ToString()));
+            var showroom = databaseContext.CarShowrooms.FirstOrDefault(cs => cs == car.CarShowroom);
+            comboBoxShowroom.SelectedIndex = comboBoxShowroom.Items.IndexOf(car.CarShowroom.Name);
         }
     }
 }

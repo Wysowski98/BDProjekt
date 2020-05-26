@@ -151,6 +151,7 @@
             this.comboBoxOtherShowroom.Name = "comboBoxOtherShowroom";
             this.comboBoxOtherShowroom.Size = new System.Drawing.Size(255, 29);
             this.comboBoxOtherShowroom.TabIndex = 44;
+            this.comboBoxOtherShowroom.SelectedIndexChanged += new System.EventHandler(this.comboBoxOtherShowroom_SelectedIndexChanged);
             // 
             // groupBox2
             // 
@@ -170,7 +171,7 @@
             // 
             this.textBoxBestShowroom.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxBestShowroom.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxBestShowroom.Location = new System.Drawing.Point(148, 42);
+            this.textBoxBestShowroom.Location = new System.Drawing.Point(174, 42);
             this.textBoxBestShowroom.Multiline = true;
             this.textBoxBestShowroom.Name = "textBoxBestShowroom";
             this.textBoxBestShowroom.ReadOnly = true;
@@ -184,15 +185,15 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(37, 46);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(83, 17);
+            this.label1.Size = new System.Drawing.Size(131, 17);
             this.label1.TabIndex = 37;
-            this.label1.Text = "Adres salonu";
+            this.label1.Text = "Nazwa i adres salonu";
             // 
             // textBoxNumberOfCarsBest
             // 
             this.textBoxNumberOfCarsBest.BackColor = System.Drawing.Color.Gainsboro;
             this.textBoxNumberOfCarsBest.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxNumberOfCarsBest.Location = new System.Drawing.Point(256, 83);
+            this.textBoxNumberOfCarsBest.Location = new System.Drawing.Point(276, 83);
             this.textBoxNumberOfCarsBest.Multiline = true;
             this.textBoxNumberOfCarsBest.Name = "textBoxNumberOfCarsBest";
             this.textBoxNumberOfCarsBest.ReadOnly = true;

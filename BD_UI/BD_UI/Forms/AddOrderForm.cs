@@ -78,7 +78,7 @@ namespace BD_UI
                 databaseContext.Clients.Add(client);
             }
             var car = databaseContext.Cars.Include(c => c.CarShowroom).FirstOrDefault(c =>
-                comboBoxCar.SelectedItem.ToString().Contains(c.Model.Name));
+                Int32.Parse(comboBoxCar.SelectedItem.ToString().Substring(0, 1)) == c.Id);
             var showroom = databaseContext.CarShowrooms.FirstOrDefault(cs =>
                 comboBoxShowroom.SelectedItem.ToString().Contains(cs.Name));
             if (car.CarShowroom != showroom)

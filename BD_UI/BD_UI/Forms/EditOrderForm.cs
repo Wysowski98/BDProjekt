@@ -65,14 +65,23 @@ namespace BD_UI
                 listBoxOrders.SelectedItem.ToString().Contains(o.Id.ToString()));
             
             if (!String.IsNullOrWhiteSpace(textBoxOrderID.Text))
-            {
+            {            
+                String services = "";
+
+                foreach (Object item in checkedListBoxServices.CheckedItems)
+                {
+                    services += (item.ToString() + ", ");
+                }
+                services.TrimEnd(',');
+
                 if (!String.IsNullOrWhiteSpace(textBoxPrice.Text))
                 {
                     order.Id = int.Parse(textBoxOrderID.Text);
                     order.Price = int.Parse(textBoxPrice.Text);
                     order.OrderDate = dateTimePickerDate1.Value;
                     order.RealizationDate = dateTimePickerDate2.Value;
-                }
+                    order.AdditionalServices = services;
+                }             
             }
             if (!String.IsNullOrWhiteSpace(textBoxFirstName.Text))
             {
@@ -116,7 +125,6 @@ namespace BD_UI
 
         private void listBoxOrders_SelectedIndexChanged(object sender, EventArgs e)
         {
-            checkedListBoxServices.Items.Clear();
 
             var order = databaseContext.Orders.Include(o => o.Car).Include(o => o.Client).First(o =>
                 listBoxOrders.SelectedItem.ToString().Contains(o.Id.ToString()));
@@ -133,7 +141,7 @@ namespace BD_UI
             textBoxCustomerID.Text = client.DocumentNumber;
             textBoxPhoneNumber.Text = client.PhoneNumber;
             comboBoxCar.SelectedIndex = comboBoxCar.Items.IndexOf(car.Id.ToString() + " " + brand.Name + " " + model.Name);
-            comboBoxShowroom.SelectedIndex = comboBoxShowroom.Items.IndexOf(showroom.Name);
+            comboBoxShowroom.SelectedIndex = comboBoxShowroom.Items.IndexOf(showroom.Name);          
         }
 
         private void comboBoxCar_SelectedIndexChanged(object sender, EventArgs e)

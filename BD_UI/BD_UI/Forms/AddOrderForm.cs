@@ -76,9 +76,10 @@ namespace BD_UI
                     DocumentNumber = textBoxIDcustomer.Text
                 };
                 databaseContext.Clients.Add(client);
+                databaseContext.SaveChanges();
             }
             var car = databaseContext.Cars.Include(c => c.CarShowroom).FirstOrDefault(c =>
-                Int32.Parse(comboBoxCar.SelectedItem.ToString().Substring(0, 1)) == c.Id);
+                int.Parse(comboBoxCar.SelectedItem.ToString().Substring(0, 2)) == c.Id);
             var showroom = databaseContext.CarShowrooms.FirstOrDefault(cs =>
                 comboBoxShowroom.SelectedItem.ToString().Contains(cs.Name));
             if (car.CarShowroom != showroom)
@@ -108,7 +109,7 @@ namespace BD_UI
                         Price = int.Parse(textBoxPrice.Text),
                         OrderDate = dateTimePickerDate1.Value,
                         RealizationDate = dateTimePickerDate2.Value,
-                        AdditionalServices = services
+                        //AdditionalServices = services
                     });
                 }
                 else
@@ -133,6 +134,8 @@ namespace BD_UI
                 comboBoxCar.SelectedItem.ToString().Contains(c.Id.ToString()));
             var showroom = databaseContext.CarShowrooms.FirstOrDefault(cs => cs == car.CarShowroom);
             comboBoxShowroom.SelectedIndex = comboBoxShowroom.Items.IndexOf(car.CarShowroom.Name);
+            int defaultPrice = (int)car.Price;
+            textBoxPrice.Text = defaultPrice.ToString();
         }
     }
 }

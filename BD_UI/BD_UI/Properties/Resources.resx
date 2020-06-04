@@ -118,6 +118,15 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DeleteButton_smallest_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DeleteButton_smallest_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customers_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customers_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SaveChanges_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\SaveChanges_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Done_115_461" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Done_115_461.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -127,14 +136,11 @@
   <data name="help_orange30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\help_orange30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zaloguj_final1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zaloguj_final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="logobmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logobmp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="userGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\userGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DeleteButton_smallest_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\DeleteButton_smallest_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="zaloguj_final_238_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zaloguj_final_238_57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Edit_button_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_button_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,49 +148,46 @@
   <data name="lockerGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lockerGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="add_button_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\add_button_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="showroom_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\showroom_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logobmp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logobmp.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="Xgradient" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Xgradient.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="car_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\car_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="coins_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\coins_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="customers_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\customers_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="New_Project__2_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\New_Project__2_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AutoCar_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AutoCar_title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="SaveChanges_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\SaveChanges_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bottomPanel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\bottomPanel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Car_big_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Car_big_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="list_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\list_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="zaloguj_final_238_57" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\zaloguj_final_238_57.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bottomPanel2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bottomPanel2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="underline" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\underline.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AutoCar_title" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AutoCar_title.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="New_Project__2_-removebg-preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\New_Project__2_-removebg-preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coins_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\coins_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car_big_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car_big_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="zaloguj_final1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\zaloguj_final1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="showroom_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\showroom_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="userGrey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\userGrey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car_white30" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_white30.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_button_115_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add_button_115_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="generate_200_46" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\generate_200_46.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

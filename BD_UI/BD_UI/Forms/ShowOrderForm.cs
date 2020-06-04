@@ -66,6 +66,8 @@ namespace BD_UI
             textBoxPhoneNumber.Text = client.PhoneNumber;
             textBoxCar.Text = brand.Name + " " + model.Name;
             textBoxShowroom.Text = showroom.Name;
+            dateTimePickerDate1.Value = order.OrderDate;
+            dateTimePickerDate2.Value = order.RealizationDate;
         }
     }
 }

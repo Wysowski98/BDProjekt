@@ -28,28 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.listBoxCurrentOrders = new System.Windows.Forms.ListBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.listBoxCompletedOrders = new System.Windows.Forms.ListBox();
+            this.buttonReport = new System.Windows.Forms.Button();
             this.buttonDone = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
+            this.pictureBoxClose = new System.Windows.Forms.PictureBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBoxClose
-            // 
-            this.pictureBoxClose.Image = global::BD_UI.Properties.Resources.Xgradient;
-            this.pictureBoxClose.Location = new System.Drawing.Point(12, 12);
-            this.pictureBoxClose.Name = "pictureBoxClose";
-            this.pictureBoxClose.Size = new System.Drawing.Size(18, 19);
-            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxClose.TabIndex = 31;
-            this.pictureBoxClose.TabStop = false;
-            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
             // 
             // label9
             // 
@@ -116,6 +106,19 @@
             this.listBoxCompletedOrders.Size = new System.Drawing.Size(455, 191);
             this.listBoxCompletedOrders.TabIndex = 44;
             // 
+            // buttonReport
+            // 
+            this.buttonReport.BackColor = System.Drawing.Color.Transparent;
+            this.buttonReport.FlatAppearance.BorderSize = 0;
+            this.buttonReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonReport.Image = global::BD_UI.Properties.Resources.generate_200_46;
+            this.buttonReport.Location = new System.Drawing.Point(83, 486);
+            this.buttonReport.Name = "buttonReport";
+            this.buttonReport.Size = new System.Drawing.Size(205, 49);
+            this.buttonReport.TabIndex = 60;
+            this.buttonReport.UseVisualStyleBackColor = false;
+            this.buttonReport.Click += new System.EventHandler(this.buttonReport_Click);
+            // 
             // buttonDone
             // 
             this.buttonDone.BackColor = System.Drawing.Color.Transparent;
@@ -129,11 +132,23 @@
             this.buttonDone.UseVisualStyleBackColor = false;
             this.buttonDone.Click += new System.EventHandler(this.buttonDone_Click);
             // 
+            // pictureBoxClose
+            // 
+            this.pictureBoxClose.Image = global::BD_UI.Properties.Resources.Xgradient;
+            this.pictureBoxClose.Location = new System.Drawing.Point(12, 12);
+            this.pictureBoxClose.Name = "pictureBoxClose";
+            this.pictureBoxClose.Size = new System.Drawing.Size(18, 19);
+            this.pictureBoxClose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxClose.TabIndex = 31;
+            this.pictureBoxClose.TabStop = false;
+            this.pictureBoxClose.Click += new System.EventHandler(this.pictureBoxClose_Click);
+            // 
             // SalesHistoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 555);
+            this.Controls.Add(this.buttonReport);
             this.Controls.Add(this.buttonDone);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -142,9 +157,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SalesHistoryForm";
             this.Text = "SalesHistoryForm";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxClose)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,5 +174,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.ListBox listBoxCompletedOrders;
         private System.Windows.Forms.Button buttonDone;
+        private System.Windows.Forms.Button buttonReport;
     }
 }

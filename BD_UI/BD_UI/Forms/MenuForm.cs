@@ -160,6 +160,5 @@ namespace BD_UI
             LoginForm loginForm = new LoginForm();
             loginForm.ShowDialog();
         }
-
     }
 }

@@ -49,6 +49,7 @@ namespace BD_UI
         private void labelClose_Click(object sender, EventArgs e)
         {
             this.Close();
+            System.Windows.Forms.Application.Exit();
         }
 
         private void textBoxUsername_KeyDown(object sender, KeyEventArgs e)

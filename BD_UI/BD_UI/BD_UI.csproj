@@ -1,0 +1,592 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.EntityFrameworkCore.Design.3.1.3\build\net461\Microsoft.EntityFrameworkCore.Design.props" Condition="Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.3\build\net461\Microsoft.EntityFrameworkCore.Design.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D8B0FFE3-DD7F-473A-90A2-6C500CB85D3D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BD_UI</RootNamespace>
+    <AssemblyName>BD_UI</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.1, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13.1\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.HashCode, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.HashCode.1.1.0\lib\net461\Microsoft.Bcl.HashCode.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Data.SqlClient, Version=1.0.19269.1, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.SqlClient.1.0.19269.1\lib\net46\Microsoft.Data.SqlClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Design, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Design.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.Relational, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.Relational.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.Relational.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.EntityFrameworkCore.SqlServer, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.EntityFrameworkCore.SqlServer.3.1.3\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Binder, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Binder.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.Binder.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.FileExtensions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.FileExtensions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.FileExtensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Configuration.Json, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Configuration.Json.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Configuration.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.3.1.3\lib\net461\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileProviders.Physical, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileProviders.Physical.3.1.3\lib\netstandard2.0\Microsoft.Extensions.FileProviders.Physical.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.FileSystemGlobbing, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.FileSystemGlobbing.3.1.3\lib\netstandard2.0\Microsoft.Extensions.FileSystemGlobbing.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=3.1.3.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.3.1.3\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.0\lib\netstandard2.0\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.5.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.7.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Common, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Data.Common.4.3.0\lib\net451\System.Data.Common.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.7.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.3\lib\netstandard2.0\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.7.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.7.1\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.2\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Database\DatabaseContext.cs" />
+    <Compile Include="Database\Domain\Accounts.cs" />
+    <Compile Include="Database\Domain\CarBrands.cs" />
+    <Compile Include="Database\Domain\Cars.cs" />
+    <Compile Include="Database\Domain\CarShowrooms.cs" />
+    <Compile Include="Database\Domain\Clients.cs" />
+    <Compile Include="Database\Domain\Employees.cs" />
+    <Compile Include="Database\Domain\Jobs.cs" />
+    <Compile Include="Database\Domain\Models.cs" />
+    <Compile Include="Database\Domain\Orders.cs" />
+    <Compile Include="Forms\AddCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCarForm.Designer.cs">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCustomerForm.Designer.cs">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddModelBrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddModelBrandForm.Designer.cs">
+      <DependentUpon>AddModelBrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddShowroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddShowroomForm.Designer.cs">
+      <DependentUpon>AddShowroomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddWorkerForm.Designer.cs">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCarForm.Designer.cs">
+      <DependentUpon>EditCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditCustomerForm.Designer.cs">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditOrderForm.Designer.cs">
+      <DependentUpon>EditOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddOrderForm.Designer.cs">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditModelBrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditModelBrandForm.Designer.cs">
+      <DependentUpon>EditModelBrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditShowroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditShowroomForm.Designer.cs">
+      <DependentUpon>EditShowroomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EditWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditWorkerForm.Designer.cs">
+      <DependentUpon>EditWorkerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HelpForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HelpForm.Designer.cs">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MenuForm.Designer.cs">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200507195913_init.cs" />
+    <Compile Include="Migrations\20200507195913_init.designer.cs">
+      <DependentUpon>20200507195913_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200510160349_Employess.cs" />
+    <Compile Include="Migrations\20200510160349_Employess.designer.cs">
+      <DependentUpon>20200510160349_Employess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200510163828_Employees.cs" />
+    <Compile Include="Migrations\20200510163828_Employees.designer.cs">
+      <DependentUpon>20200510163828_Employees.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200511190610_Accounts.cs" />
+    <Compile Include="Migrations\20200511190610_Accounts.designer.cs">
+      <DependentUpon>20200511190610_Accounts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200511201140_DocumentNumberChange.cs" />
+    <Compile Include="Migrations\20200511201140_DocumentNumberChange.designer.cs">
+      <DependentUpon>20200511201140_DocumentNumberChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20200511201414_DocumentNumberClients.cs" />
+    <Compile Include="Migrations\20200511201414_DocumentNumberClients.designer.cs">
+      <DependentUpon>20200511201414_DocumentNumberClients.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\DatabaseContextModelSnapshot.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Forms\SalesHistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesHistoryForm.Designer.cs">
+      <DependentUpon>SalesHistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SalesRankForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SalesRankForm.Designer.cs">
+      <DependentUpon>SalesRankForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowCarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowCarForm.Designer.cs">
+      <DependentUpon>ShowCarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowCustomerForm.Designer.cs">
+      <DependentUpon>ShowCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowModelBrandForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowModelBrandForm.Designer.cs">
+      <DependentUpon>ShowModelBrandForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowOrderForm.Designer.cs">
+      <DependentUpon>ShowOrderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowShowroomForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowShowroomForm.Designer.cs">
+      <DependentUpon>ShowShowroomForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ShowWorkerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ShowWorkerForm.Designer.cs">
+      <DependentUpon>ShowWorkerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Forms\AddCarForm.resx">
+      <DependentUpon>AddCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCustomerForm.resx">
+      <DependentUpon>AddCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddModelBrandForm.resx">
+      <DependentUpon>AddModelBrandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddShowroomForm.resx">
+      <DependentUpon>AddShowroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddWorkerForm.resx">
+      <DependentUpon>AddWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCarForm.resx">
+      <DependentUpon>EditCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditCustomerForm.resx">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditOrderForm.resx">
+      <DependentUpon>EditOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddOrderForm.resx">
+      <DependentUpon>AddOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditModelBrandForm.resx">
+      <DependentUpon>EditModelBrandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditShowroomForm.resx">
+      <DependentUpon>EditShowroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditWorkerForm.resx">
+      <DependentUpon>EditWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HelpForm.resx">
+      <DependentUpon>HelpForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MenuForm.resx">
+      <DependentUpon>MenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Forms\SalesHistoryForm.resx">
+      <DependentUpon>SalesHistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SalesRankForm.resx">
+      <DependentUpon>SalesRankForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowCarForm.resx">
+      <DependentUpon>ShowCarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowCustomerForm.resx">
+      <DependentUpon>ShowCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowModelBrandForm.resx">
+      <DependentUpon>ShowModelBrandForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowOrderForm.resx">
+      <DependentUpon>ShowOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowShowroomForm.resx">
+      <DependentUpon>ShowShowroomForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ShowWorkerForm.resx">
+      <DependentUpon>ShowWorkerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New Project %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\9055969781537356155-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_Project__2_-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_Project-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_Project-removebg-preview %286%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_Project-removebg-preview %285%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zaloguj.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zaloguj1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\New_Project-removebg-preview %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zaloguj_final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zaloguj_final1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logojpg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logobmp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottom_panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bottomPanel2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\16574928711541068753-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_white_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car_white30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list_white30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\customers_white30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\showroom_white30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\coins_white30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_button_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xgradient.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\help_orange30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EditButton.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_button_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SaveChanges_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Done_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteButton_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteButton_small_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DeleteButton_smallest_115_46.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Done_115_461.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\underline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\userGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lockerGrey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_big_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AutoCar_title.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zaloguj_final_238_57.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\generate_200_46.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.EntityFrameworkCore.Design.3.1.3\build\net461\Microsoft.EntityFrameworkCore.Design.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.EntityFrameworkCore.Design.3.1.3\build\net461\Microsoft.EntityFrameworkCore.Design.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets'))" />
+  </Target>
+  <Import Project="..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('..\packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
+</Project>
